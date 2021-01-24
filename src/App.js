@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import Calendar from "react-calendar"
+import "react-calendar/dist/Calendar.css"
 
 function App() {
+  const [value, onChange] = React.useState(new Date())
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ display: "flex", justifyContent: "center", alignContent: "center", flexDirection: "column" }}>
+      <h3>
+        wojtekmaj/react-calendar from <a href="https://github.com/wojtekmaj/react-calendar">Link</a>
+      </h3>
+      <Calendar onChange={onChange} value={value} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
